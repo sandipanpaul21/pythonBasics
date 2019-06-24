@@ -1,1 +1,22 @@
+# Tuples
 
+t = (1,2.5,'data')
+t   # (1, 2.5, 'data')
+type(t)
+
+t = 1,2.5,'data'
+t   # (1, 2.5, 'data')
+type(t) # tuple
+
+# tuple has a built-in index, with the help of which you can retrieve single or multiple elements of the tuple
+t[2] # 'data'
+type(t[2])  # str
+
+# Zero based numbering - Python uses zero-based numbering schemes. For example, the first element of a tuple object has index value 0.
+
+# Only two special methods that this object type provides: count and index. 
+#The first counts the number of occurrences of a certain object and the second gives the index value of the first appearance of it:
+t.count('data') # 1
+t.index('data') # 2
+
+# NOTE - Tuple objects are not very flexible since, once defined, they cannot be changed easily.
