@@ -1,0 +1,126 @@
+# Lists
+
+# A list object is defined through brackets and the basic capabilities and behavior are similar to those of tuple objects
+
+l = [1,2.5,'data']
+l   # [1, 2.5, 'data']
+type(l)     # list
+
+# list objects can also be defined or converted by using the function list
+t = (1,2.5, "data")
+t # (1, 2.5, 'data')
+type(t)  # tuple
+l = list(t) 
+l  # [1, 2.5, 'data']
+type(l)  # [1, 2.5, 'data']
+
+# In addition to the characteristics of tuple objects, list objects are also expandable and reducible via different methods.
+
+# string and tuple objects are immutable sequence objects (with indexes) that cannot be changed once created 
+# list objects are mutable and can be changed via different operations 
+# You can append list objects to an existing list object, and more:
+
+l # [1, 2.5, 'data']
+
+l.append([4,3]) # append list at the end
+l # [1, 2.5, 'data', [4, 3]]
+
+l.extend([1.0,1.5,2.0]) # append elements of list
+l # [1, 2.5, 'data', [4, 3], 1.0, 1.5, 2.0]
+
+l.insert(1,'insert') # insert object before index position
+l # [1, 'insert', 2.5, 'data', [4, 3], 1.0, 1.5, 2.0] 
+
+l.remove('data') # remove first occurrence of object
+l # [1, 'insert', 2.5, [4, 3], 1.0, 1.5, 2.0]
+
+p = l.pop(3)
+p # [4, 3]
+l # [1, 'insert', 2.5, 1.0, 1.5, 2.0]
+print(p,l)  # [4, 3] [1, 'insert', 2.5, 1.0, 1.5, 2.0]
+
+# Slicing is also easily accomplished. 
+# Here, slicing refers to an operation that breaks down a data set into smaller parts (of interest):
+l[2:5]  # 3rd to 5th elements, [2.5, 1.0, 1.5]
+
+# Control structure
+# For example for loops
+
+# The for loop loops over the elements of the list object l with index values 2 to 4 and prints the square of the respective elements. 
+# Note the importance of the indentation (whitespace) in the second line:
+l # [1, 'insert', 2.5, 1.0, 1.5, 2.0]
+l[2:5] # [2.5, 1.0, 1.5]
+for element in l[2:5]:
+    print(element)
+
+#2.5
+#1.0
+#1.5
+    
+for i in range(2,5):
+    print(l[i])
+#2.5
+#1.0
+#1.5
+    
+# Python also provides the typical (conditional) control elements if, elif, and else.
+
+for i in range(1,10):
+    if i % 2 == 0:
+        print(i, "is even")
+
+#2 is even
+#4 is even
+#6 is even
+#8 is even
+        
+for i in range(1,10):
+    if i % 2 == 0:
+        print(i, "is even")
+    elif i % 3 == 0:
+        print(i, "is a multiple of 3")
+    else:
+        print(i, "is odd")
+        
+#1 is odd
+#2 is even
+#3 is a multiple of 3
+#4 is even
+#5 is odd
+#6 is even
+#7 is odd
+#8 is even
+#9 is a multiple of 3
+        
+total = 0
+while total < 100:
+    total += 1
+print(total) # 100
+
+# List comprehension
+m = [i ** 2 for i in range(5)]
+m # [0, 1, 4, 9, 16]
+
+# Functional Programming
+def f(x):
+    return x **2
+
+f(2)  #4
+f(10)  # 100
+
+def even(x):
+    return x % 2 == 0 
+even(1) # False
+even(4) # True   
+
+# The return object is a Boolean. 
+# Such a function can be applied to a whole list object by using map:
+map(even, range(5)) # <map at 0x73dec32ac8>
+print(map(even,range(5))) #<map object at 0x00000073DEC32898>
+print(list(map(even, range(5)))) # [True, False, True, False, True]
+
+filter(even, range(5)) # <filter at 0x73dec32908>
+print(list(filter(even, range(5))))  # [0, 2, 4]
+
+# It can be considered good practice to avoid loops on the Python level as far as possible. 
+# list comprehensions and functional programming tools like map, filter, and reduce provide means to write code without loops that is both compact and in general more readable.
