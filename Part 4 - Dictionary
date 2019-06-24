@@ -1,0 +1,22 @@
+# Dicts
+# dict objects are dictionaries, and also mutable sequences, that allow data retrieval by keys that can, for example, be string objects
+# They are so-called key-value stores
+# While list objects are ordered and sortable, dict objects are unordered and unsortable. 
+# Curly brackets are what define dict objects:
+
+d = {
+     'Name' : 'Sandipan Paul',
+     'Country' : 'India',
+     'Age' : 24
+     }
+type(d) # dict
+d # {'Name': 'Sandipan Paul', 'Country': 'India', 'Age': 24}
+print(d['Name'], d['Age'])  # Sandipan Paul 24
+d.keys() # dict_keys(['Name', 'Country', 'Age'])
+d.values() # dict_values(['Sandipan Paul', 'India', 24])
+d.items() # dict_items([('Name', 'Sandipan Paul'), ('Country', 'India'), ('Age', 24)])
+
+birthday = True
+if birthday is True:
+    d['Age'] += 1
+print(d['Age']) # 26
