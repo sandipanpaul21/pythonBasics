@@ -1,9 +1,5 @@
 # Tuples
 
-t = (1,2.5,'data')
-t   # (1, 2.5, 'data')
-type(t)
-
 t = 1,2.5,'data'
 t   # (1, 2.5, 'data')
 type(t) # tuple
