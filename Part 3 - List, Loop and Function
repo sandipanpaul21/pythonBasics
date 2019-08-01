@@ -12,7 +12,7 @@ t # (1, 2.5, 'data')
 type(t)  # tuple
 l = list(t) 
 l  # [1, 2.5, 'data']
-type(l)  # [1, 2.5, 'data']
+type(l)  # list
 
 # In addition to the characteristics of tuple objects, list objects are also expandable and reducible via different methods.
 
